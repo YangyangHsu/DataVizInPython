@@ -1,10 +1,10 @@
-#CheatSheet
+## CheatSheet
 
-#####Two Libraries: matplotlib, seaborn
+##### Two Libraries: matplotlib, seaborn
 
-####subplot: plt.subplot(1, 2, 2)
+#### subplot: plt.subplot(1, 2, 2)
 
-###Bar Chart
+### Bar Chart
 
 Barchart: `sb.countplot(data =  , x = ' ', color =  )` 
 
@@ -35,21 +35,21 @@ tick_names = ['{:0.2f}'.format(v) for v in tick_props]
 plt.xticks(tick_props * number, tick_names)
 plt.xlabel('Proportion')
 ```
-###Histogram
+### Histogram
 
 ```python
 bins = np.arange(20, data['count'].max() + 5, 5)
 plt.hist(data['count'], bins = bins)
 ```
 
-###Scale
+### Scale
 
 ```python
 plt.xlim((0,6)) //Only choose those from 0 - 6
 plt.xscale('log') //Use log to show the result evenly
 ```
 
-###Scatterplots
+### Scatterplots
 
 ```python
 plt.scatter(data = df, x = 'num_var1', y = 'num_var2')
@@ -65,7 +65,7 @@ Scatterplot with a regression line in the middle.
 sb.regplot(data = df, x = 'num_var1', y = 'num_var2')
 ```
 
-###Heatmap
+### Heatmap
 
 ```python
 plt.subplot(1, 2, 2)
@@ -76,7 +76,7 @@ plt.hist2d(data = df, x = 'disc_var1', y = 'disc_var2',
 plt.colorbar();
 ```
 
-###Violin Plots
+### Violin Plots
 
 x-axis for categorical variable and y-axis for quantitative. The violin plots show the distribution among each category.
 
@@ -87,13 +87,13 @@ sb.violinplot(data = df, x = 'cat_var', y = 'num_var')
 //There is also a parameter called inner, indicating the contents inside each figure.
 ```
 
-###Box Plots
+### Box Plots
 
 ```python
 sb.boxplot(data = df, x = 'cat_var', y = 'num_var', color = base_color)
 ```
 
-###Clustered Bar Charts
+### Clustered Bar Charts
 
 ```python
 ax = sb.countplot(data = df, x = 'cat_var1', hue = 'cat_var2')
@@ -106,7 +106,7 @@ sb.heatmap(ct_counts)
 sb.heatmap(ct_counts, annot = True, fmt = 'd') //label
 ```
 
-###Faceting
+### Faceting
 
 **Axises are consistent throughout the whole graph**
 
@@ -117,7 +117,7 @@ g.map(plt.hist, "num_var", bins = bin_edges) //bins = np.arange(5, 15+1, 1)
 g.set_titles('{col_name}')
 ```
 
-###Adapted Bar Charts
+### Adapted Bar Charts
 
 ```python
 base_color = sb.color_palette()[0]
@@ -125,7 +125,7 @@ sb.barplot(data = df, x = 'cat_var', y = 'num_var', color = base_color)
 //The bar heights indicate the mean value on the numeric variable, and the lines means the range of of certain category.
 ```
 
-###Line Plot
+### Line Plot
 
 ```python
 #normal line plot
@@ -142,7 +142,7 @@ plt.xlabel('num_var1')
 plt.ylabel('num_var2')
 ```
 
-###Stacked Plots
+### Stacked Plots
 
 ```python
 cat1_order = ['East', 'South', 'West', 'North']
@@ -169,9 +169,9 @@ plt.xticks(np.arange(len(cat1_order)), cat1_order)
 plt.legend(reversed(artists), reversed(cat2_order), framealpha = 1, bbox_to_anchor = (1, 0.5), loc = 6);
 ```
 
-###Encoding
+### Encoding
 
-#####via Shape
+##### via Shape
 
 ```python
 cat_markers = [['A', 'o'],  //circle
@@ -184,7 +184,7 @@ for cat, marker in cat_markers:
 plt.legend(['A','B'])
 ```
 
-#####via Size
+##### via Size
 
 ```python
 plt.scatter(data = df, x = 'num_var1', y = 'num_var2', s = 'num_var3')
@@ -198,7 +198,7 @@ for s in sizes:
 plt.legend(legend_obj, sizes)
 ```
 
-#####via Color
+##### via Color
 
 ```python
 sb.palplot(sb.color_palette(n_colors=9))
