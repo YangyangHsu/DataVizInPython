@@ -41,5 +41,6 @@ plt.hist(data['count'], bins = bins)
 ```
 
 ###Scale
+
 `plt.xlim((0,6)) //Only choose those from 0 - 6`
 `plt.xscale('log') //Use log to show the result evenly`
